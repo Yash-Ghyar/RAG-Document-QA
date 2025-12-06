@@ -13,8 +13,14 @@ from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
 
+# ------------------------------
+# FLASK SECRET KEY FIX (Only addition)
+# ------------------------------
+SECRET_KEY = os.getenv("FLASK_SECRET_KEY", "defaultsecretkey")
+
 # Flask app
 app = Flask(__name__)
+app.secret_key = SECRET_KEY  # <-- Added line
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
