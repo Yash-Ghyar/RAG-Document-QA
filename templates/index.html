@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAG PDF AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="startup-bg">
+
+<div class="container startup-container">
+
+    <!-- HEADER -->
+    <div class="text-center mb-4">
+        <h1 class="startup-title">RAG PDF AI System</h1>
+        <p class="startup-subtitle">Upload your PDF and ask anything using AI</p>
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+    {% if msg %}
+    <div class="upload-success">
+        {{ msg }}
+    </div>
+    {% endif %}
+
+    <!-- UPLOAD PDF -->
+    <div class="startup-card p-4 mb-4">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label class="startup-label">Upload PDF</label>
+            <input type="file" class="form-control startup-input mt-2" name="pdf" required>
+            <button class="startup-btn w-100 mt-3">📄 Upload & Process</button>
+        </form>
+    </div>
+
+    <!-- ASK QUESTION -->
+    <div class="startup-card p-4">
+        <form action="/ask" method="POST">
+            <label class="startup-label">Ask a Question</label>
+            <input type="text" class="form-control startup-input mt-2"
+                   name="question" placeholder="Type your question..." required>
+            <button class="startup-btn w-100 mt-3">🤖 Get Answer</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
