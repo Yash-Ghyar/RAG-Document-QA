@@ -1,50 +1,109 @@
-# 📄🤖 RAG PDF AI System (Flask + Groq LLM)
+# 📄🤖 RAG PDF Question Answering System
 
-A smart AI-powered PDF Question-Answering web application that extracts information from uploaded PDF documents and answers user queries using **RAG (Retrieval-Augmented Generation)**.
+AI-powered **Retrieval-Augmented Generation (RAG)** application that allows users to upload PDF documents and ask questions in natural language.
 
-💡 Upload a PDF → Ask any question → Get accurate answers strictly from the document.
+The system extracts PDF text, generates embeddings, retrieves relevant context using **ChromaDB**, and produces answers using **Groq LLaMA 3.1**.
 
-🧠 The system uses text chunking, vector embeddings, retrieval, and Groq LLaMA to deliver fast, reliable responses through a clean and modern Bootstrap UI.
-
----
-
-## 🧠 Tech Stack
-
-### Frontend
-- HTML  
-- CSS  
-- Bootstrap  
-
-### Backend
-- Flask  
-- Python  
-
-### AI / NLP
-- LangChain  
-- ChromaDB  
-- SentenceTransformer Embeddings  
-- Groq API (LLaMA 3.1 8B Instant)  
-
-### Environment
-- python-dotenv for API key management  
+💡 Upload PDF → Ask Question → Get AI Answer
 
 ---
 
 ## 🚀 Features
 
-- 📄 Upload any PDF file  
-- 🔍 Extracts and indexes document content  
-- 🧠 RAG-based question answering (answers only from PDF)  
-- ⚡ Fast inference using Groq LLaMA 3.1  
-- 🎨 Simple and modern UI  
-- 📚 Uses ChromaDB as vector store  
-- 🧩 Lightweight Flask backend (easy deployment)  
+- 📄 Upload PDF documents
+- 🔍 Extract and process document text
+- 🧠 Semantic search using embeddings
+- ⚡ Fast answer generation using Groq
+- 📚 Vector storage with ChromaDB
+- 🎨 Simple Flask + Bootstrap UI
+- 🔐 Secure API management using `.env`
 
 ---
 
-## 📦 Installation
+## 🧠 Tech Stack
 
-### 1️⃣ Clone repository
+**Frontend:** HTML, CSS, Bootstrap  
+**Backend:** Flask, Python  
+**AI:** LangChain, ChromaDB, Sentence Transformers, Groq LLaMA 3.1  
+**Utilities:** PyPDF2, python-dotenv  
+
+---
+
+## 🏗️ Workflow
+
+```text
+PDF Upload
+   ↓
+Text Extraction
+   ↓
+Chunking
+   ↓
+Embeddings
+   ↓
+ChromaDB
+   ↓
+Similarity Search
+   ↓
+Groq LLaMA
+   ↓
+Answer
+```
+
+---
+
+## 📊 Metrics
+
+| Metric | Value |
+|--------|-------|
+| Chunk Size | 1000 |
+| Chunk Overlap | 200 |
+| Embedding Model | all-MiniLM-L6-v2 |
+| Vector Store | ChromaDB |
+| LLM | LLaMA 3.1 8B |
+| Avg Response | ~1–3 sec |
+
+---
+
+## ⚙️ Installation
+
 ```bash
 git clone https://github.com/Yash-Ghyar/RAG-PDF-AI-System.git
 cd RAG-PDF-AI-System
+pip install -r requirements.txt
+```
+
+Create `.env`
+
+```env
+GROQ_API_KEY=your_api_key
+```
+
+Run:
+
+```bash
+python app.py
+```
+
+Open:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+## 📌 Future Improvements
+
+- Multi-PDF support
+- Chat history
+- Cloud deployment
+- Better retrieval
+
+---
+
+## 👨‍💻 Author
+
+**Yash Ghyar**  
+BTech – Artificial Intelligence & Data Science
+
+⭐ Star the repository if you found it useful.
