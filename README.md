@@ -106,4 +106,3 @@ http://127.0.0.1:5000
 **Yash Ghyar**  
 BTech – Artificial Intelligence & Data Science
 
-⭐ Star the repository if you found it useful.
